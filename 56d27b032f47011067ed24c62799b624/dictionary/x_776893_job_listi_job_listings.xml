@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Job Listings" max_length="40" name="x_776893_job_listi_job_listings" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Company" max_length="100" name="company" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="First Contact Date" max_length="40" name="first_contact_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="First Contact Method" max_length="40" name="first_contact_method" type="choice">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Job Description" max_length="4000" name="job_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Job Listing URL" max_length="100" name="job_listing_url" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Job Title" max_length="40" name="job_title" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Job Type" max_length="40" name="job_type" type="choice">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Location" max_length="40" name="location" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Location Type" max_length="40" name="location_type" type="choice">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Note" max_length="4000" name="note" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="encode_utf8=false" label="Recruiter" max_length="32" name="recruiter" reference="x_776893_job_listi_recruiters" type="reference"/>
+        <element label="Responded to Recruiter" max_length="40" name="responded_to_recruiter" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Source" max_length="40" name="source" type="choice">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Tech" max_length="1000" name="tech" type="string"/>
+        <index name="index">
+            <element name="recruiter"/>
+        </index>
+    </element>
+</database>
