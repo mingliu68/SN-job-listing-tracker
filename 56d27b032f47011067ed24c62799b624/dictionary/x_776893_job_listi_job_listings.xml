@@ -1,29 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Job Listings" max_length="40" name="x_776893_job_listi_job_listings" type="collection">
         <element attributes="edge_encryption_enabled=true" label="Company" max_length="100" name="company" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="First Contact Date" max_length="40" name="first_contact_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="First Contact Date" mandatory="true" max_length="40" name="first_contact_date" type="glide_date"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="First Contact Method" max_length="40" name="first_contact_method" type="choice">
-            <choice/>
+            <choice>
+                <element inactive_on_update="false" label="Email" sequence="0" value="email"/>
+                <element inactive_on_update="false" label="Job Site Message" sequence="1" value="job_site_message"/>
+                <element inactive_on_update="false" label="LinkedIn Connect Request" sequence="2" value="linkedin_connect_request"/>
+                <element inactive_on_update="false" label="Phone" sequence="3" value="phone"/>
+                <element inactive_on_update="false" label="Text Message" sequence="4" value="text_message"/>
+                <element inactive_on_update="false" label="Other" sequence="5" value="other"/>
+            </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Job Description" max_length="4000" name="job_description" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Job Listing URL" max_length="100" name="job_listing_url" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="Job Title" max_length="40" name="job_title" type="string"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Job Type" max_length="40" name="job_type" type="choice">
-            <choice/>
+        <element attributes="edge_encryption_enabled=true" label="Job Title" mandatory="true" max_length="40" name="job_title" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Job Type" mandatory="true" max_length="40" name="job_type" type="choice">
+            <choice>
+                <element inactive="true" inactive_on_update="true" label="Contract" sequence="0" value="contract"/>
+                <element inactive_on_update="false" label="Contractor" sequence="0" value="contractor"/>
+                <element inactive_on_update="false" label="Full-Time" sequence="1" value="full_time"/>
+                <element inactive="true" inactive_on_update="true" label="W2" sequence="1" value="w2"/>
+                <element inactive="true" inactive_on_update="true" label="Choice 3" sequence="2" value="Choice 3"/>
+                <element inactive_on_update="false" label="Part-Time" sequence="2" value="part_time"/>
+                <element inactive_on_update="false" label="Other" sequence="3" value="other"/>
+            </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Location" max_length="40" name="location" type="string"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Location Type" max_length="40" name="location_type" type="choice">
-            <choice/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Location Type" mandatory="true" max_length="40" name="location_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Remote" sequence="0" value="remote"/>
+                <element inactive_on_update="false" label="Hybrid" sequence="1" value="hybrid"/>
+                <element inactive_on_update="false" label="On-Location" sequence="2" value="on_location"/>
+            </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Note" max_length="4000" name="note" type="string"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element attributes="encode_utf8=false" label="Recruiter" max_length="32" name="recruiter" reference="x_776893_job_listi_recruiters" type="reference"/>
+        <element attributes="encode_utf8=false" label="Recruiter" mandatory="true" max_length="32" name="recruiter" reference="x_776893_job_listi_recruiters" type="reference"/>
         <element label="Responded to Recruiter" max_length="40" name="responded_to_recruiter" type="boolean"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Source" max_length="40" name="source" type="choice">
-            <choice/>
+        <element attributes="edge_encryption_enabled=true" label="Salary Range" max_length="40" name="salary_range" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Source" mandatory="true" max_length="40" name="source" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="LinkedIn" sequence="0" value="linkedin"/>
+                <element inactive_on_update="false" label="Indeed" sequence="1" value="indeed"/>
+                <element inactive_on_update="false" label="ZipRecruiter" sequence="2" value="ziprecruiter"/>
+                <element inactive_on_update="false" label="Dice" sequence="3" value="dice"/>
+                <element inactive_on_update="false" label="Hired" sequence="4" value="hired"/>
+                <element inactive_on_update="false" label="Other" sequence="5" value="other"/>
+            </choice>
         </element>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="state" type="choice">
-            <choice/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="State" mandatory="true" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Recruiter Contact" sequence="0" value="recruiter_contact"/>
+                <element inactive_on_update="false" label="Applied" sequence="1" value="applied"/>
+                <element inactive_on_update="false" label="Pre-Screening" sequence="2" value="pre_screening"/>
+                <element inactive_on_update="false" label="interview Process" sequence="3" value="interview_process"/>
+                <element inactive_on_update="false" label="Reject (Not Interested)" sequence="4" value="reject_not_interested"/>
+                <element inactive_on_update="false" label="Reject (With Offer)" sequence="5" value="reject_with_offer"/>
+                <element inactive_on_update="false" label="Rejected" sequence="6" value="rejected"/>
+                <element inactive_on_update="false" label="Accepted" sequence="7" value="accepted"/>
+            </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Tech" max_length="1000" name="tech" type="string"/>
         <index name="index">
